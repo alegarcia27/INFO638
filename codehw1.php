@@ -79,7 +79,7 @@ if ($cents/1 >= 4 && $cents/1 <= 4.99){
 echo "<h1> 99 Bottles of Beer </h1>";
 
 
-for ($bottles = 9; $bottles > (-1); -- $bottles) {
+for ($bottles = 99; $bottles > (-1); -- $bottles) {
 	echo "<p>$bottles bottles of beer on the wall, $bottles bottles of beer.</p>
 <p>Take one down, pass it around, $bottles bottles of beer on the wall.</p>";
 	continue;
