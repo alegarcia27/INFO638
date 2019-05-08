@@ -61,7 +61,7 @@ body {
 <div class="topnav">
 <a href = "index.php">Home</a>
 <a href = "museums.php">Museums</a>
-<a href = "Reviews.php">Museum Reviews</a>
+<a href = "reviews.php">Museum Reviews</a>
 <a href = "randomartwork.php">Show me a random artwork!</a>
 <a href = "randomcreator.php">Show me a random creator!</a>
 <a href = "login_page.php">Login</a>
