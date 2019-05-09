@@ -21,10 +21,10 @@ while ($row=$result->fetch_assoc()) {
 	#print_r($row);
 	#now format for website
 	
+	print "<a href='reviewpage.php?review_id=".$row["review_id"]."'>".$row["title_of_review"]."</a><br>";
 	print "Written by ".$row["username"]."<br>";
 	print $row["name_of_museum"]."<br>";
 	print "Rating: ".$row["rating"]."/10<br>";
-	print $row["title_of_review"]."<br>";
 	print $row["review"]."<br>";
 	print "Posted on ".$row["date_of_review"]."<br>";
 	print "<p></p>";

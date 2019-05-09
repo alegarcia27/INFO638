@@ -22,7 +22,7 @@ while ($row=$result->fetch_assoc()) {
 	#now format for website
 	
 	print $row["museum_pic"]."<br>";
-	print $row["name_of_museum"]."<br>";
+	print "<a href='museumpage.php?museum_id=".$row["museum_id"]."'>".$row["name_of_museum"]."</a><br>";
 	print $row["street_address"]."<br>";
 	print $row["city"].", ".$row["state"]." ".$row["zip_code"]."<br>";
 	print $row["country"]."<br>";

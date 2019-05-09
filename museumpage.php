@@ -1,26 +1,18 @@
 <?php
 include_once ("header.php");
-?>
 
-<select name="forma" onchange="location = this.value;">
- <option value="museums.php">View alphabetically (default)</option>
- <option value="museumslocation.php">View by location</option>
- <option value="museumstype.php">View by type of museum</option>
-</select>
-<p></p>
 
-<?php
-#constructed query
-$query = 'SELECT * FROM museum NATURAL JOIN location ORDER BY type_of_museum';
-#sent to db
+$mid= $_GET["museum_id"];	
+#construct query
+$query='SELECT * FROM location NATURAL JOIN museum WHERE museum_id = "'.$mid.'"';
+#print $query;
+
+#send to db
 $result=$conn->query($query);
 if(!$result) die ($conn->error);
-#print out to see
-while ($row=$result->fetch_assoc()) {
-	#print to see array
-	#print_r($row);
-	#now format for website
-	
+#output to user
+while ($row=$result->fetch_assoc()){
+	#print_r ($row);
 	print $row["museum_pic"]."<br>";
 	print "<a href='museumpage.php?museum_id=".$row["museum_id"]."'>".$row["name_of_museum"]."</a><br>";
 	print $row["street_address"]."<br>";
@@ -30,7 +22,14 @@ while ($row=$result->fetch_assoc()) {
 	print "Opened on: ".$row["date_opened"]."<br>";
 	print "<a href = ".$row["website"].">Website</a><br>";
 	print "<p></p>";
+	
+	
 }
 
+
+
+print '<a href="museums.php">Back to museums</a>';
+
 include_once ("footer.php");
+
 ?>

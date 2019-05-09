@@ -21,9 +21,9 @@ while ($row=$result->fetch_assoc()) {
 	#print to see array
 	#print_r($row);
 	#now format for website
-	
+	#print "<h3><a href='eachbook.php?isbn=".$row["isbn"]."'>".$row["title"]."</a></h3>";
 	print $row["museum_pic"]."<br>";
-	print $row["name_of_museum"]."<br>";
+	print "<a href='museumpage.php?museum_id=".$row["museum_id"]."'>".$row["name_of_museum"]."</a><br>";
 	print $row["street_address"]."<br>";
 	print $row["city"].", ".$row["state"]." ".$row["zip_code"]."<br>";
 	print $row["country"]."<br>";
